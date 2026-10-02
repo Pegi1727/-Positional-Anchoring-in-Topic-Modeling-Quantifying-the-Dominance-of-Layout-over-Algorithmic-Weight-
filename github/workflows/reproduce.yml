@@ -1,0 +1,53 @@
+name: Reproduce Analysis Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  reproducibility-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Data Integrity Check
+        run: python python/01_validate_data.py
+
+      - name: Execute Statistical Pipeline
+        run: |
+          python python/02_descriptive_summary.py
+          python python/03_spearman_analysis.py
+          python python/04_mixed_effects_models.py
+
+      - name: Generate High-Res Figures
+        run: |
+          python python/05_plot_fig1_position_decay.py
+          python python/06_plot_fig2_heatmap.py
+          python python/07_plot_fig3_model_weight_quintiles.py
+          python python/08_plot_fig4_cumulative_budget.py
+
+      - name: Export Tables and Topic Cards
+        run: |
+          python python/09_topic_card_generator.py
+          python python/10_export_q1_tables.py
+
+      - name: Verify Generated Outputs
+        run: |
+          test -f outputs/figures/figure1_position_decay.png
+          test -f outputs/tables/descriptive_condition_summary.csv
+          echo "Pipeline reproduced and validated successfully."
