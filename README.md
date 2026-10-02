@@ -1,0 +1,2 @@
+# -Positional-Anchoring-in-Topic-Modeling-Quantifying-the-Dominance-of-Layout-over-Algorithmic-Weight-
+Empirical study and dataset evaluating positional anchoring bias in topic models. Across 18,000 observations (N=60), we show visual layout dominates algorithmic weight (OR=0.607, p&lt;.001), while model weight has no impact (p=.91). Includes analysis scripts, statistical pipelines, high-res figures, and the proposed Topic Cards design framework.
