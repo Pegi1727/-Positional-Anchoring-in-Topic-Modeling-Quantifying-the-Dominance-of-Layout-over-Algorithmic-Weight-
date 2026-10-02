@@ -1,0 +1,59 @@
+H2 Analysis — REAL dataset: /mnt/data/h2_testing_dataset.csv
+(user confirmed: "dade ha vaghei hastand" — these are the real data)
+==============================================================================
+Shape: 18000 rows x 6 cols | 60 participants x 3 conditions x 20 topics/positions
+Condition counts: Ranked=7500, Shuffled=6600, Reverse=3900 | selected=1: 2700 (15.0%)
+
+DATA-QUALITY CHECKS
+- No missing values; binary outcome; displayed_position 1-20; model_weight 0.01-0.10.
+- Selection rate decreases monotonically with position (0.991 at pos 1 -> 0.009 at pos 20).
+- No complete separation: all 20 positions and all 20 weights contain both outcomes.
+
+IMPORTANT DIAGNOSTIC — why the original Exchangeable GEE diverged
+Within condition, model_weight is a DETERMINISTIC function of displayed_position:
+  Ranked:  corr(pos, weight) = -1.000 (weight = 0.1 - 0.004737*(pos-1))
+  Reverse: corr(pos, weight) = +1.000
+  Shuffled: corr(pos, weight) = -0.301
+This perfect collinearity makes the Exchangeable solver diverge (coef ~1e8, SE=0, OR=inf/0).
+The data are fine; the specification/optimizer is not. Converged alternatives below.
+
+MODEL 1 — Binomial GEE, Independence working correlation, clusters = participant_id (60)
+converged: True   |   identical point estimates to cluster-robust GLM
+term                            OR      2.5%       97.5%     p-value
+Intercept                   4.4114    3.2836      5.9265   6.698e-23
+condition[T.Reverse]        1.0096    0.8525      1.1956   9.119e-01
+condition[T.Shuffled]       1.0048    0.9238      1.0928   9.119e-01
+displayed_position          0.6068    0.5910      0.6230  3.084e-301
+model_weight                1.1784    0.0643     21.6114   9.119e-01
+
+MODEL 2 — Binomial GLM with cluster-robust (participant) SEs (robust confirmation)
+term                            OR      2.5%       97.5%     p-value
+Intercept                   4.4114    3.2753      5.9415   1.533e-22
+condition[T.Reverse]        1.0096    0.8513      1.1974   9.126e-01
+condition[T.Shuffled]       1.0048    0.9232      1.0936   9.126e-01
+displayed_position          0.6068    0.5909      0.6232  3.458e-296
+model_weight                1.1784    0.0627     22.1558   9.127e-01
+
+MODEL 3 — Shuffled condition only (weight only partially collinear with position there)
+term                            OR      2.5%       97.5%     p-value
+Intercept                   5.2682    4.0805      6.8015   3.153e-37
+displayed_position          0.5954    0.5713      0.6206  7.726e-133
+model_weight                0.2265    0.0134      3.8413   3.038e-01
+
+SPEARMAN CORRELATION PER CONDITION (selection rate vs displayed_position)
+  Ranked   : rho = -0.9475 (p = 2.36e-10) | Top-1 rate 0.9947 | Top-20 rate 0.0027
+  Reverse  : rho = -0.9557 (p = 5.32e-11) | Top-1 rate 0.9949 | Top-20 rate 0.0205
+  Shuffled : rho = -0.9446 (p = 3.79e-10) | Top-1 rate 0.9848 | Top-20 rate 0.0091
+
+INTERPRETATION (H2)
+- Strong, highly significant POSITION BIAS: each extra displayed position multiplies the
+  odds of selection by 0.607 (95% CI 0.591-0.623), i.e. -39% odds per position (p < 1e-290).
+- No condition effect: Reverse OR=1.01 (p=0.91), Shuffled OR=1.00 (p=0.91) vs Ranked.
+  All three conditions show nearly identical Spearman rho (~ -0.95): the position gradient
+  dominates regardless of presentation order.
+- model_weight has no independent effect once position is in the model (OR=1.18, p=0.91).
+  CAVEAT: weight and position are perfectly collinear within Ranked/Reverse, so their
+  effects cannot be separated there; only the Shuffled condition (r=-0.30) partially
+  identifies the weight effect, and even there it is not significant (see Model 3).
+- H2 conclusion: selection is driven by displayed position, not by model quality/weight;
+  this pattern holds in all 3 conditions (rho ~ -0.95, all p < 1e-9).

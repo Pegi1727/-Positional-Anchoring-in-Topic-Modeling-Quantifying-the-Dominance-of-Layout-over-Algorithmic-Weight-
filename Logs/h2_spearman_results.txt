@@ -1,0 +1,25 @@
+Spearman Correlation (Position vs Selection Rate in Shuffled): -0.9446
+P-value: 0.0000
+
+Selection rates by displayed_position:
+displayed_position
+1     0.984848
+2     0.660606
+3     0.445455
+4     0.260606
+5     0.184848
+6     0.103030
+7     0.063636
+8     0.081818
+9     0.057576
+10    0.033333
+11    0.024242
+12    0.027273
+13    0.009091
+14    0.012121
+15    0.003030
+16    0.021212
+17    0.003030
+18    0.006061
+19    0.009091
+20    0.009091

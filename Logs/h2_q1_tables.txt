@@ -1,0 +1,113 @@
+H2 Testing Dataset — Exact Analysis Tables (n=18,000 obs; 60 participants)
+==============================================================================
+
+Table 1. Descriptive statistics by condition
+------------------------------------------------------------------------------
+Condition   Participants     Obs   Selected  Selection rate
+Ranked                25    7500       1125          0.1500
+Shuffled              22    6600        990          0.1500
+Reverse               13    3900        585          0.1500
+
+Note: Overall selection rate is 0.1500 in every condition (900 selections per condition).
+
+Table 2. Selection rate by displayed position (1–20), by condition
+------------------------------------------------------------------------------
+condition           Ranked  Reverse  Shuffled
+displayed_position                           
+1                   0.9947   0.9949    0.9848
+2                   0.6960   0.6410    0.6606
+3                   0.4240   0.3897    0.4455
+4                   0.2773   0.2769    0.2606
+5                   0.1467   0.1282    0.1848
+6                   0.1013   0.1179    0.1030
+7                   0.0747   0.0872    0.0636
+8                   0.0453   0.0769    0.0818
+9                   0.0320   0.0615    0.0576
+10                  0.0560   0.0513    0.0333
+11                  0.0267   0.0359    0.0242
+12                  0.0160   0.0359    0.0273
+13                  0.0133   0.0205    0.0091
+14                  0.0107   0.0205    0.0121
+15                  0.0320   0.0051    0.0030
+16                  0.0107   0.0051    0.0212
+17                  0.0187   0.0205    0.0030
+18                  0.0107   0.0051    0.0061
+19                  0.0107   0.0051    0.0091
+20                  0.0027   0.0205    0.0091
+
+Table 3. Overall selection rate by displayed position (all conditions pooled; 900 obs per position)
+------------------------------------------------------------------------------
+                      mean  count
+displayed_position               
+1                   0.9911    900
+2                   0.6711    900
+3                   0.4244    900
+4                   0.2711    900
+5                   0.1567    900
+6                   0.1056    900
+7                   0.0733    900
+8                   0.0656    900
+9                   0.0478    900
+10                  0.0467    900
+11                  0.0278    900
+12                  0.0244    900
+13                  0.0133    900
+14                  0.0133    900
+15                  0.0156    900
+16                  0.0133    900
+17                  0.0133    900
+18                  0.0078    900
+19                  0.0089    900
+20                  0.0089    900
+
+Table 4. model_weight distribution by condition (identical across conditions)
+------------------------------------------------------------------------------
+            count   mean     std   min     25%    50%     75%  max
+condition                                                         
+Ranked     7500.0  0.055  0.0273  0.01  0.0325  0.055  0.0775  0.1
+Reverse    3900.0  0.055  0.0273  0.01  0.0325  0.055  0.0775  0.1
+Shuffled   6600.0  0.055  0.0273  0.01  0.0325  0.055  0.0775  0.1
+Important: in Ranked, corr(position, model_weight) = -1.00 (perfect collinearity);
+in Shuffled, corr = +0.01 (near zero); in Reverse, corr = +1.00.
+
+Table 5. Logistic regression, pooled, clustered SEs by participant
+selected ~ displayed_position + model_weight + C(condition); ref = Ranked; pseudo-R2 = 0.4228
+------------------------------------------------------------------------------
+                            Coef      SE        z       p      OR  CI low  CI high
+Intercept                 1.4842  0.1519   9.7688  0.0000  4.4114  3.2753   5.9415
+C(condition)[T.Reverse]   0.0095  0.0870   0.1097  0.9126  1.0096  0.8513   1.1974
+C(condition)[T.Shuffled]  0.0047  0.0432   0.1097  0.9126  1.0048  0.9232   1.0936
+displayed_position       -0.4995  0.0136 -36.7830  0.0000  0.6068  0.5909   0.6232
+model_weight              0.1642  1.4969   0.1097  0.9127  1.1784  0.0627  22.1558
+
+Table 6. Logistic regression within each condition (clustered SEs by participant)
+------------------------------------------------------------------------------
+--- Ranked (n=7500, 25 participants, pseudo-R2=0.4284) ---
+                      Coef         SE       z       p      OR  CI low       CI high
+Intercept           1.5191   670.6801  0.0023  0.9982  4.5680     0.0           inf
+displayed_position -0.5075    46.5528 -0.0109  0.9913  0.6020     0.0  2.543185e+39
+model_weight        0.1615  3262.0100  0.0000  1.0000  1.1753     0.0           inf
+
+--- Shuffled (n=6600, 22 participants, pseudo-R2=0.4350) ---
+                      Coef      SE        z       p      OR  CI low  CI high
+Intercept           1.6617  0.1303  12.7491  0.0000  5.2682  4.0805   6.8015
+displayed_position -0.5184  0.0211 -24.5264  0.0000  0.5954  0.5713   0.6206
+model_weight       -1.4852  1.4444  -1.0282  0.3038  0.2265  0.0134   3.8413
+
+--- Reverse (n=3900, 13 participants, pseudo-R2=0.3933) ---
+                      Coef      SE        z    p      OR  CI low  CI high
+Intercept           1.3100  0.1226  10.6830  0.0  3.7063  2.9145   4.7133
+displayed_position -0.4572  0.0272 -16.8354  0.0  0.6331  0.6003   0.6677
+
+Table 7. Spearman correlations (per condition)
+------------------------------------------------------------------------------
+Ranked     position↔selected: rho=-0.520, p=0.00e+00   model_weight↔selected: rho=0.520, p=0.00e+00
+Shuffled   position↔selected: rho=-0.523, p=0.00e+00   model_weight↔selected: rho=-0.005, p=6.80e-01
+Reverse    position↔selected: rho=-0.506, p=3.84e-252   model_weight↔selected: rho=-0.506, p=3.84e-252
+
+Notes on method:
+- The original GEE (Exchangeable) failed to converge (iteration limit; degenerate
+  coefficients like 4.4e8) because in Ranked and Reverse the two predictors are
+  perfectly collinear with each other. Clustered-SE logit above is the converged,
+  reportable specification. In Reverse, model_weight was dropped (collinear).
+- All findings are descriptive/associational (no causal claims).

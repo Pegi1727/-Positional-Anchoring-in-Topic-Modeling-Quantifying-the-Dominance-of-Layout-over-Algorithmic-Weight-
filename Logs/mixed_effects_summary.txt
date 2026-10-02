@@ -1,0 +1,61 @@
+=== MODEL 1: Logistic Regression (Main Effects) ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:               selected   No. Observations:                18000
+Model:                          Logit   Df Residuals:                    17995
+Method:                           MLE   Df Model:                            4
+Date:                Fri, 02 Oct 2026   Pseudo R-squ.:                  0.4228
+Time:                        17:26:57   Log-Likelihood:                -4391.9
+converged:                       True   LL-Null:                       -7608.8
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+============================================================================================
+                               coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+Intercept                    1.4842      0.136     10.917      0.000       1.218       1.751
+C(condition)[T.Reverse]      0.0095      0.107      0.089      0.929      -0.200       0.220
+C(condition)[T.Shuffled]     0.0047      0.072      0.065      0.948      -0.137       0.147
+displayed_position          -0.4995      0.010    -49.720      0.000      -0.519      -0.480
+model_weight                 0.1642      1.384      0.119      0.906      -2.548       2.876
+============================================================================================
+
+=== MODEL 2: Logistic Regression (Interaction Effects) ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:               selected   No. Observations:                18000
+Model:                          Logit   Df Residuals:                    17993
+Method:                           MLE   Df Model:                            6
+Date:                Fri, 02 Oct 2026   Pseudo R-squ.:                  0.4232
+Time:                        17:26:57   Log-Likelihood:                -4388.5
+converged:                       True   LL-Null:                       -7608.8
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+===============================================================================================================
+                                                  coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------
+Intercept                                       1.6915      0.188      9.010      0.000       1.324       2.060
+C(condition)[T.Reverse]                        -0.3737      0.208     -1.795      0.073      -0.782       0.034
+C(condition)[T.Shuffled]                       -0.0299      0.142     -0.211      0.833      -0.307       0.248
+displayed_position                             -0.5153      0.017    -29.469      0.000      -0.550      -0.481
+displayed_position:C(condition)[T.Reverse]      0.0652      0.029      2.215      0.027       0.008       0.123
+displayed_position:C(condition)[T.Shuffled]    -0.0031      0.024     -0.129      0.897      -0.051       0.045
+model_weight                                   -1.4852      1.623     -0.915      0.360      -4.666       1.695
+===============================================================================================================
+
+=== MODEL 3: Mixed Linear Model (Participant Random Effects) ===
+                     Mixed Linear Model Regression Results
+===============================================================================
+Model:                     MixedLM         Dependent Variable:         selected
+No. Observations:          18000           Method:                     REML    
+No. Groups:                60              Scale:                      0.0933  
+Min. group size:           300             Log-Likelihood:             inf     
+Max. group size:           300             Converged:                  Yes     
+Mean group size:           300.0                                               
+-------------------------------------------------------------------------------
+                         Coef.   Std.Err.     z    P>|z|    [0.025     0.975]  
+-------------------------------------------------------------------------------
+Intercept                 0.000  96624.939   0.000 1.000 -189381.400 189381.400
+C(condition)[T.Reverse]  -0.000 165199.738  -0.000 1.000 -323785.536 323785.536
+C(condition)[T.Shuffled]  0.000 141229.955   0.000 1.000 -276805.625 276805.625
+displayed_position       -0.032      0.000 -79.575 0.000      -0.033     -0.031
+model_weight              0.008      0.085   0.092 0.926      -0.159      0.175
+Group Var                 0.000                                                
+===============================================================================
