@@ -1,0 +1,49 @@
+﻿topic,rank,keyword,weight
+0,1,match,0.456966
+0,2,team,0.371786
+0,3,coach,0.222203
+0,4,championship final,0.222203
+0,5,final match,0.222203
+0,6,team championship,0.222203
+0,7,final,0.222203
+0,8,championship,0.222203
+0,9,prepared,0.222203
+0,10,prepared team,0.222203
+0,11,coach prepared,0.222203
+0,12,football,0.200614
+1,1,hotel,0.483998
+1,2,relaxing,0.284969
+1,3,summer,0.284969
+1,4,summer vacation,0.284969
+1,5,hotel relaxing,0.284969
+1,6,booked beach,0.284969
+1,7,vacation,0.284969
+1,8,booked,0.284969
+1,9,relaxing summer,0.284969
+1,10,beach,0.284969
+1,11,beach hotel,0.284969
+1,12,reached hotel,0.265645
+2,1,software,0.421962
+2,2,security,0.248745
+2,3,security performance,0.248745
+2,4,improves,0.248745
+2,5,improves smartphone,0.248745
+2,6,performance,0.248745
+2,7,new software,0.248745
+2,8,new,0.248745
+2,9,smartphone,0.248745
+2,10,smartphone security,0.248745
+2,11,software update,0.248745
+2,12,update improves,0.248745
+3,1,game,0.342659
+3,2,practiced,0.194911
+3,3,practiced shooting,0.194911
+3,4,defense,0.194911
+3,5,defense game,0.194911
+3,6,players practiced,0.194911
+3,7,basketball,0.194911
+3,8,players,0.194911
+3,9,basketball players,0.194911
+3,10,shooting,0.194911
+3,11,shooting defense,0.194911
+3,12,goals,0.194911

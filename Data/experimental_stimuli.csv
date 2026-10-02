@@ -1,0 +1,109 @@
+topic,condition,displayed_position,keyword,original_rank,original_weight,intruder,weight_source,response_item_id
+0,Rank,1,match,1.0,0.456966,False,model,0_R_1
+0,Rank,2,team,2.0,0.371786,False,model,0_R_2
+0,Rank,3,reached hotel,,,True,INTRUDER,0_R_3
+0,Rank,4,coach,3.0,0.222203,False,model,0_R_4
+0,Rank,5,championship final,4.0,0.222203,False,model,0_R_5
+0,Rank,6,final match,5.0,0.222203,False,model,0_R_6
+0,Rank,7,team championship,6.0,0.222203,False,model,0_R_7
+0,Rank,8,final,7.0,0.222203,False,model,0_R_8
+0,Rank,9,championship,8.0,0.222203,False,model,0_R_9
+0,Reverse,1,championship,8.0,0.222203,False,model,0_R_1
+0,Reverse,2,final,7.0,0.222203,False,model,0_R_2
+0,Reverse,3,team championship,6.0,0.222203,False,model,0_R_3
+0,Reverse,4,final match,5.0,0.222203,False,model,0_R_4
+0,Reverse,5,championship final,4.0,0.222203,False,model,0_R_5
+0,Reverse,6,reached hotel,,,True,INTRUDER,0_R_6
+0,Reverse,7,coach,3.0,0.222203,False,model,0_R_7
+0,Reverse,8,team,2.0,0.371786,False,model,0_R_8
+0,Reverse,9,match,1.0,0.456966,False,model,0_R_9
+0,Shuffled,1,team,2.0,0.371786,False,model,0_S_1
+0,Shuffled,2,reached hotel,,,True,INTRUDER,0_S_2
+0,Shuffled,3,final,7.0,0.222203,False,model,0_S_3
+0,Shuffled,4,championship final,4.0,0.222203,False,model,0_S_4
+0,Shuffled,5,match,1.0,0.456966,False,model,0_S_5
+0,Shuffled,6,final match,5.0,0.222203,False,model,0_S_6
+0,Shuffled,7,championship,8.0,0.222203,False,model,0_S_7
+0,Shuffled,8,team championship,6.0,0.222203,False,model,0_S_8
+0,Shuffled,9,coach,3.0,0.222203,False,model,0_S_9
+1,Rank,1,hotel,1.0,0.483998,False,model,1_R_1
+1,Rank,2,relaxing,2.0,0.284969,False,model,1_R_2
+1,Rank,3,summer,3.0,0.284969,False,model,1_R_3
+1,Rank,4,summer vacation,4.0,0.284969,False,model,1_R_4
+1,Rank,5,hotel relaxing,5.0,0.284969,False,model,1_R_5
+1,Rank,6,team,,,True,INTRUDER,1_R_6
+1,Rank,7,booked beach,6.0,0.284969,False,model,1_R_7
+1,Rank,8,vacation,7.0,0.284969,False,model,1_R_8
+1,Rank,9,booked,8.0,0.284969,False,model,1_R_9
+1,Reverse,1,booked,8.0,0.284969,False,model,1_R_1
+1,Reverse,2,vacation,7.0,0.284969,False,model,1_R_2
+1,Reverse,3,team,,,True,INTRUDER,1_R_3
+1,Reverse,4,booked beach,6.0,0.284969,False,model,1_R_4
+1,Reverse,5,hotel relaxing,5.0,0.284969,False,model,1_R_5
+1,Reverse,6,summer vacation,4.0,0.284969,False,model,1_R_6
+1,Reverse,7,summer,3.0,0.284969,False,model,1_R_7
+1,Reverse,8,relaxing,2.0,0.284969,False,model,1_R_8
+1,Reverse,9,hotel,1.0,0.483998,False,model,1_R_9
+1,Shuffled,1,vacation,7.0,0.284969,False,model,1_S_1
+1,Shuffled,2,booked,8.0,0.284969,False,model,1_S_2
+1,Shuffled,3,summer vacation,4.0,0.284969,False,model,1_S_3
+1,Shuffled,4,booked beach,6.0,0.284969,False,model,1_S_4
+1,Shuffled,5,team,,,True,INTRUDER,1_S_5
+1,Shuffled,6,summer,3.0,0.284969,False,model,1_S_6
+1,Shuffled,7,hotel relaxing,5.0,0.284969,False,model,1_S_7
+1,Shuffled,8,hotel,1.0,0.483998,False,model,1_S_8
+1,Shuffled,9,relaxing,2.0,0.284969,False,model,1_S_9
+2,Rank,1,software,1.0,0.421962,False,model,2_R_1
+2,Rank,2,basketball players,,,True,INTRUDER,2_R_2
+2,Rank,3,security,2.0,0.248745,False,model,2_R_3
+2,Rank,4,security performance,3.0,0.248745,False,model,2_R_4
+2,Rank,5,improves,4.0,0.248745,False,model,2_R_5
+2,Rank,6,improves smartphone,5.0,0.248745,False,model,2_R_6
+2,Rank,7,performance,6.0,0.248745,False,model,2_R_7
+2,Rank,8,new software,7.0,0.248745,False,model,2_R_8
+2,Rank,9,new,8.0,0.248745,False,model,2_R_9
+2,Reverse,1,new,8.0,0.248745,False,model,2_R_1
+2,Reverse,2,new software,7.0,0.248745,False,model,2_R_2
+2,Reverse,3,performance,6.0,0.248745,False,model,2_R_3
+2,Reverse,4,improves smartphone,5.0,0.248745,False,model,2_R_4
+2,Reverse,5,improves,4.0,0.248745,False,model,2_R_5
+2,Reverse,6,security performance,3.0,0.248745,False,model,2_R_6
+2,Reverse,7,security,2.0,0.248745,False,model,2_R_7
+2,Reverse,8,software,1.0,0.421962,False,model,2_R_8
+2,Reverse,9,basketball players,,,True,INTRUDER,2_R_9
+2,Shuffled,1,security,2.0,0.248745,False,model,2_S_1
+2,Shuffled,2,new software,7.0,0.248745,False,model,2_S_2
+2,Shuffled,3,improves,4.0,0.248745,False,model,2_S_3
+2,Shuffled,4,improves smartphone,5.0,0.248745,False,model,2_S_4
+2,Shuffled,5,security performance,3.0,0.248745,False,model,2_S_5
+2,Shuffled,6,basketball players,,,True,INTRUDER,2_S_6
+2,Shuffled,7,performance,6.0,0.248745,False,model,2_S_7
+2,Shuffled,8,new,8.0,0.248745,False,model,2_S_8
+2,Shuffled,9,software,1.0,0.421962,False,model,2_S_9
+3,Rank,1,game,1.0,0.342659,False,model,3_R_1
+3,Rank,2,practiced,2.0,0.194911,False,model,3_R_2
+3,Rank,3,practiced shooting,3.0,0.194911,False,model,3_R_3
+3,Rank,4,defense,4.0,0.194911,False,model,3_R_4
+3,Rank,5,defense game,5.0,0.194911,False,model,3_R_5
+3,Rank,6,players practiced,6.0,0.194911,False,model,3_R_6
+3,Rank,7,basketball,7.0,0.194911,False,model,3_R_7
+3,Rank,8,players,8.0,0.194911,False,model,3_R_8
+3,Rank,9,security,,,True,INTRUDER,3_R_9
+3,Reverse,1,players,8.0,0.194911,False,model,3_R_1
+3,Reverse,2,basketball,7.0,0.194911,False,model,3_R_2
+3,Reverse,3,players practiced,6.0,0.194911,False,model,3_R_3
+3,Reverse,4,defense game,5.0,0.194911,False,model,3_R_4
+3,Reverse,5,defense,4.0,0.194911,False,model,3_R_5
+3,Reverse,6,practiced shooting,3.0,0.194911,False,model,3_R_6
+3,Reverse,7,practiced,2.0,0.194911,False,model,3_R_7
+3,Reverse,8,game,1.0,0.342659,False,model,3_R_8
+3,Reverse,9,security,,,True,INTRUDER,3_R_9
+3,Shuffled,1,basketball,7.0,0.194911,False,model,3_S_1
+3,Shuffled,2,defense,4.0,0.194911,False,model,3_S_2
+3,Shuffled,3,practiced shooting,3.0,0.194911,False,model,3_S_3
+3,Shuffled,4,practiced,2.0,0.194911,False,model,3_S_4
+3,Shuffled,5,players practiced,6.0,0.194911,False,model,3_S_5
+3,Shuffled,6,security,,,True,INTRUDER,3_S_6
+3,Shuffled,7,game,1.0,0.342659,False,model,3_S_7
+3,Shuffled,8,players,8.0,0.194911,False,model,3_S_8
+3,Shuffled,9,defense game,5.0,0.194911,False,model,3_S_9
