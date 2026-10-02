@@ -1,0 +1,44 @@
+project:
+  name: "topic-model-positional-anchoring"
+  version: "v.0.1.anchoring"
+  doi: "10.5281/zenodo.23107129"
+  random_seed: 42
+
+dataset:
+  primary_file: "data/h2_testing_dataset.csv"
+  total_observations: 18000
+  participants: 60
+  topics: 15
+  slots_per_topic: 20
+  conditions:
+    - "ranked"
+    - "shuffled"
+    - "reverse"
+
+statistical_parameters:
+  alpha_level: 0.05
+  confidence_interval: 0.95
+  correlation_method: "spearman"
+  model_type: "mixed_effects_logistic_regression"
+  random_effects:
+    - "participant_id"
+    - "topic_id"
+  satisficing_thresholds:
+    pareto_point: 0.80
+    critical_budget: 0.90
+
+visualizations:
+  figure_dpi: 300
+  color_palette: "warm"
+  formats:
+    - "png"
+    - "pdf"
+  plot_dimensions:
+    width_inches: 8.0
+    height_inches: 5.5
+
+outputs:
+  figures_dir: "outputs/figures"
+  tables_dir: "outputs/tables"
+  logs_dir: "outputs/logs"
+  cards_dir: "outputs/cards"
