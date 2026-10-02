@@ -1,0 +1,22 @@
+title: "Replication Package: Positional Anchoring and the Decoupling of Visual Layout from Model Weight in Topic Model Interpretability"
+version: "v.0.1.anchoring"
+doi: "10.5281/zenodo.23107129"
+publication_date: "2026-10-02"
+upload_type: "software"
+access_right: "open"
+license: "MIT"
+creators:
+  - name: "Merrikhi, Pegah"
+    affiliation: "Independent Researcher"
+    email: "pegah.merrikhiii@gmail.com"
+description: >-
+  Official replication suite for: 'Positional Anchoring and the Decoupling of Visual Layout
+  from Model Weight in Topic Model Interpretability'. Contains full N=18,000 empirical observations,
+  Python/R analytical pipelines, GLMM/GEE scripts, publication figures (300 DPI), and Topic Card implementations.
+keywords:
+  - "topic modeling"
+  - "positional bias"
+  - "anchoring bias"
+  - "interpretability"
+  - "natural language processing"
+  - "cognitive ergonomics"
