@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this dataset, replication suite, or software, please cite it as below."
+title: "Replication Package: Positional Anchoring and the Decoupling of Visual Layout from Model Weight in Topic Model Interpretability"
+version: "v.0.1.anchoring"
+doi: "10.5281/zenodo.23107129"
+date-released: 2026-10-02
+url: "https://github.com/Pegi1727/topic-model-positional-anchoring"
+repository-code: "https://github.com/Pegi1727/topic-model-positional-anchoring"
+license: "MIT"
+authors:
+  - family-names: "Merrikhi"
+    given-names: "Pegah"
+    email: "pegah.merrikhiii@gmail.com"
+    affiliation: "Independent Researcher"
+keywords:
+  - "topic modeling"
+  - "positional bias"
+  - "anchoring bias"
+  - "cognitive ergonomics"
+  - "interpretability"
+  - "open science"
+  - "human-AI interaction"
+abstract: >-
+  This replication repository provides the empirical dataset (N=18,000), statistical modeling code
+  (Python and R), Jupyter notebooks, and configuration files for validating positional
+  anchoring and the decoupling of visual layout from model weight in topic model interpretability.
