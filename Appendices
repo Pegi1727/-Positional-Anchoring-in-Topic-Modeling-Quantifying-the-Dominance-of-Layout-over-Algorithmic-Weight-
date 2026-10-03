@@ -1,0 +1,81 @@
+________________________________________
+Appendix A: Experimental Survey and Evaluation Instrument
+A.1 Task Instructions for Annotators
+Topic Interpretation and Keyword Salience Task
+Overview:
+You are presented with candidate word lists representing latent semantic topics extracted by a machine learning model. Your objective is to identify which keywords best capture the core semantic theme of the topic.
+Instructions:
+List Inspection: Carefully inspect the presented list of 20 candidate keywords.
+Selection: Check the box next to each keyword that you consider an essential and coherent descriptor of the underlying topic. You may select as many or as few words as you deem appropriate (typically 2–5 words).
+Thematic Labeling: Provide a brief (1–3 word) label that summarizes the main theme of the topic in the text field provided.
+Confidence Rating: Rate your subjective confidence in your selection accuracy on the provided 5-point scale.
+Submission: Click “Next Topic” to proceed. Please note that once a topic is submitted, your selections are final and cannot be modified.
+________________________________________
+A.2 Post-Task Evaluation Questionnaire
+Please respond to the following statements based on your experience during the evaluation session.
+Rating Scale:
+1: Strongly Disagree | 2: Disagree | 3: Somewhat Disagree | 4: Neutral | 5: Somewhat Agree | 6: Agree | 7: Strongly Agree
+Part 1: Cognitive Strategy & Visual Scanning Heuristics
+Top-Down Primacy: “When evaluating a topic list, I primarily based my understanding on the first few words at the top of the list.”
+Exhaustive Inspection: “I thoroughly evaluated all 20 candidate words from top to bottom before deciding which ones to select.”
+Early Anchor Commitment: “Once I found 2 or 3 words that seemed to fit together near the beginning, I paid much less attention to the words placed further down.”
+Weight/Importance Perception: “I assumed that the words placed at the top of the list were mathematically more important or more representative of the topic.”
+Cognitive Fatigue: “Scanning through 20 keywords per topic became cognitively demanding as the session progressed.”
+Part 2: Qualitative Feedback
+Please provide brief answers to the following:
+Strategy Description: “Briefly describe the strategy you used to decide which keywords to select when a list appeared ambiguous or mixed in theme.”
+________________________________________
+Pattern Observation: “Did you notice any instances where the most descriptive or relevant words were placed near the middle or end of the list? If yes, how did that affect your selection behavior?”
+________________________________________
+Appendices
+Appendix A: Experimental Survey and Evaluation Questionnaire
+This section provides the standardized evaluation instrument and task guidelines administered to participants.
+A.1 Task Instructions for Annotators
+Topic Interpretation and Keyword Salience Task
+Overview: You will be presented with candidate word lists representing latent semantic topics extracted by a machine learning model. Your objective is to identify which keywords best capture the core semantic theme of the topic.
+Instructions:
+Carefully inspect the presented list of 20 candidate keywords.
+Selection: Check the box next to each keyword that you consider an essential and coherent descriptor of the underlying topic.
+Label Assignment: Provide a brief thematic label summarizing the topic in the text field provided.
+Confidence Rating: Rate your subjective confidence using the 5-point scale.
+A.2 Post-Task Evaluation Questionnaire
+(Items rated on a 7-point Likert scale: 1 = Strongly Disagree, 7 = Strongly Agree)
+Top-Down Primacy: “I primarily based my understanding on the first few words at the top of the list.”
+Exhaustive Inspection: “I thoroughly evaluated all 20 candidate words from top to bottom.”
+Early Anchor Commitment: “Once I found 2 or 3 words that seemed to fit together near the beginning, I paid much less attention to the words placed further down.”
+Weight/Importance Perception: “I assumed that the words placed at the top were mathematically more representative.”
+________________________________________
+Appendix B: Stimulus Construction and Data Schema
+The experiment utilized three experimental arms generated via experimental_stimuli.csv and topic_cards_with_intruders.csv. Table B.1 demonstrates the structural variation across conditions.
+Table B.1: Stimulus Display Order (Sample Topic 0)
+
+Display Position	Ranked Condition	Reverse Condition	Shuffled Condition
+Pos 1	match (w=0.100)	defense (w=0.010)	tournament (w=0.057)
+Pos 10	league (w=0.055)	league (w=0.055)	defense (w=0.010)
+Pos 20	defense (w=0.010)	match (w=0.100)	final (w=0.081)
+Reference: Stimuli were sourced from real_dataset.csv and tokenized per model_keywords-(2).csv.
+________________________________________
+Appendix C: Visual Results and Diagnostic Figures
+The following figures represent the empirical selection outcomes across the 18,000-trial dataset.
+[INSERT Figure 1 HERE]
+Figure 1: Selection rate by display position and condition. Filename: Fig1_selection_rate_by_position_and_condition.png. Note the sharp decay in selection probability as positional rank increases, consistent across Ranked and Shuffled conditions.
+[INSERT Figure 2 HERE]
+Figure 2: Overall mean selection rate aggregated by condition. Filename: Fig2_overall_selection_rate_by_condition.png.
+[INSERT Figure 3 HERE]
+Figure 3: Heatmap of selection rates across position and experimental condition. Filename: Fig3_heatmap_selection_rate_position_condition.png. This figure visualizes the “Anchor Bias” effect where the first 3 positions dominate selections regardless of algorithmic weight.
+[INSERT Figure 4 HERE]
+Figure 4: Model weight effect isolation in the Shuffled condition. Filename: Fig4_model_weight_effect_shuffled.png. Shows the lack of correlation between intrinsic model weight and user selection when positional salience is neutralized.
+________________________________________
+Appendix D: Statistical Regression Output
+Full parameter output from the restricted maximum likelihood (REML) mixed-effects model (Ref: h2_mixedlm_summary.txt).
+========================================================================================
+Model:                   MixedLM             Dependent Variable:      selected          
+No. Observations:        18000               Method:                  REML              
+----------------------------------------------------------------------------------------
+                         Coef.     Std.Err.      z       P>|z|      [0.025      0.975]  
+----------------------------------------------------------------------------------------
+displayed_position      -0.032        0.000  -79.575     0.000      -0.033      -0.031  
+model_weight             0.008        0.085    0.092     0.926      -0.159       0.175  
+========================================================================================
+Note: Collinearity diagnostic tables are available in h2_q1_tables.txt. Spearman correlations (Ref: h2_spearman_results.txt) confirm strong positional dependency (ρ≈-0.95,p<.001).
+
